@@ -1,0 +1,60 @@
+/** Advantage Shopping Test Cases **/
+
+Functional Testing Scenarios
+
+Search -> 
+1. Verify search results in case of item found
+2. Veriy search results in case of item not found
+
+Add to cart -> 
+1. Veirify adding items from search results
+2. Veirify adding items from home page/category
+3. Verify adding item with single qty
+4. Verify adding item with multiple qty
+5. Verify adding multiple unique items
+
+Mini cart and Full cart -> 
+1. Item name
+2. Item qty
+3. Item price
+4. Total
+
+Checkout -> 
+1. Shipping Details
+2. Payment Method
+3. Order Summary (Prices)
+
+Shipping Details -> 
+1. Verify adding valid address
+2. Verify adding invalid address
+3. Verify saving the details (preferred address)
+3. Verify editing saved details 
+
+Payment Method -> 
+1. Verify adding and saving MasterCard
+2. Verify adding and saving Safepay 
+3. Verify editing saved MasterCard
+
+Order Summary -> 
+1. Verify product details - name, color, price
+2. Verify quantity
+3. Verify prices -> shipping, total
+
+Order Details -> 
+1. Verify tracking number
+2. Verify order number 
+3. Verify name
+4. Verify payment mode
+5. Verify Date of order
+6. Verify order summary -> Subtotal, Shipping, Total
+
+Integration Testing Scenarios
+1. User searches for items for example, speaker items by text "speaker" in search box => Selects single item from search results => Adds to cart => Checks out => Fills shipping details => Payment details => Saves details => Places order
+2. User searches for items by text in search box => Selects multiple items from search results => Adds to cart => Checks out => Uses saved ship address and payment details => Saves details => Places order  
+3. User selects items from home/category => Selects variant items with more than 1 variant => Adds to cart => Checks out => Uses saved ship address and payment details => Saves details => Places order  
+4. User selects items from different categories => Adds to cart => Checks out => Edits ship address and changes payment mode => Saves details => Places order  
+5. User selects one item from search results and another item from category => Adds to cart => Checks out => Edits ship address and changes payment mode => Saves details => Places order  
+
+Performance Testing Scenario
+Add more than 50 unique items to cart -> note the performance
+Add more than 100 unique items to cart -> note the performance
