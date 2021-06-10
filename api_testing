@@ -1,0 +1,63 @@
+
+//** Below are the critical top scenarios in positive testing for given GET service : https://api.spacexdata.com/v4/launches/latest **//
+
+// Curl Request below
+curl --location --request GET 'https://api.spacexdata.com/v4/launches/latest'
+
+// Postman test scripts below
+var jsonData = pm.response.json();
+pm.test("TC1 - Status Check", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("TC2 - Response check for success and json body", function () {
+    pm.response.to.be.ok;
+    pm.response.to.be.json;
+    pm.response.to.be.withBody;
+});
+
+pm.test("TC3 - Response check for no errors", function () {
+    pm.response.to.not.be.error;
+    pm.response.to.not.have.jsonBody("error");
+});
+
+pm.test("TC4 - Response body check for mandatory keys", function () {
+    pm.response.to.have.jsonBody("id");
+    pm.response.to.have.jsonBody("fairings");
+    pm.response.to.have.jsonBody("links");
+    pm.response.to.have.jsonBody("static_fire_date_utc");
+    pm.response.to.have.jsonBody("static_fire_date_unix");
+    pm.response.to.have.jsonBody("tbd");
+    pm.response.to.have.jsonBody( "net");
+    pm.response.to.have.jsonBody( "window");
+    pm.response.to.have.jsonBody( "rocket");
+    pm.response.to.have.jsonBody("success");
+    pm.response.to.have.jsonBody("details");
+    pm.response.to.have.jsonBody( "crew");
+    pm.response.to.have.jsonBody("ships");
+    pm.response.to.have.jsonBody("capsules");
+    pm.response.to.have.jsonBody("payloads");
+    pm.response.to.have.jsonBody("launchpad");
+    pm.response.to.have.jsonBody("auto_update");
+    pm.response.to.have.jsonBody("launch_library_id");
+    pm.response.to.have.jsonBody("failures");
+    pm.response.to.have.jsonBody("flight_number");
+    pm.response.to.have.jsonBody("name");
+    pm.response.to.have.jsonBody("date_utc");
+    pm.response.to.have.jsonBody("date_unix");
+    pm.response.to.have.jsonBody("date_local");
+    pm.response.to.have.jsonBody("date_precision");
+    pm.response.to.have.jsonBody("upcoming");
+    pm.response.to.have.jsonBody("cores");
+});
+
+
+//** Below is the critical top scenario in negative testing for given GET service : https://api.spacexdata.com/v4/launches/latest **//
+
+// Curl Request below
+curl --location --request GET 'https://api.spacexdata.com/v4/launches/latest1'
+
+// Postman test scripts below
+pm.test("TC5 - Status Check when endpoint is invalid", function () {
+pm.expect(pm.response.code).to.equal(404);
+});
